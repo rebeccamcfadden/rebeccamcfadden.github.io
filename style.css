@@ -8,6 +8,11 @@ html, body {
 
     font-family: 'Montserrat', sans-serif;
 }
+
+.body {
+    background: linear-gradient(to bottom, rgb(231, 240, 245) 0%, rgb(194, 174, 235) 100%);
+}
+
 .name {
     font-family: 'Raleway', sans-serif;
     margin-bottom: 2px;
