@@ -40,6 +40,11 @@ html, body {
     border-radius: 75%;
 }
 
+.social-links li {
+    display: inline-block;
+    margin-right: 8px;
+}
+
 .social-links a {
     text-decoration: none;
     padding: 4px;
