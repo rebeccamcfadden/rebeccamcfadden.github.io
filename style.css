@@ -7,9 +7,6 @@ html, body {
     padding: 0;
 
     font-family: 'Montserrat', sans-serif;
-}
-
-.body {
     background: linear-gradient(to bottom, rgb(231, 240, 245) 0%, rgb(194, 174, 235) 100%);
 }
 
@@ -27,7 +24,6 @@ html, body {
 }
 
 .left, .right {
-    background-color: lightblue;
 
     margin: 5px;
     max-width: 50%;
