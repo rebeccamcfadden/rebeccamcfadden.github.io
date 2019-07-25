@@ -1,81 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <title>Stay on Edge</title>
-    <style>
-    	* { padding: 0; margin: 0; border:"1px solid #000000"}
-    	canvas { background: #f6f6f6; display: block; margin: 0 auto; border: "5px solid gray";}
-    </style>
+    <title>Rebecca McFadden</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
 </head>
 <body>
-<canvas id="gameCanvas" width="540" height="280" ></canvas>
+    <div class="wrapper">
+        <div class="left">
+            <img class="profile-picture" src="img/headshot.jpg" width="200"/>
 
-<script src="player.js"></script>
-<script src="meteor.js"></script>
-<script src="star.js"></script>
-<script src="space.js"></script>
-<script src="platform.js"></script>
-<script src="game.js"></script>
-<script src="score.js"></script>
-<script>
+            <h1 class="name">Rebecca McFadden</h1>
+            <h4 class="subtitle">Texas A&M University</h4>
+            <h5 class="subsubtitle">Class of 2022</h5>
+        </div>
 
-var canvas = document.getElementById("gameCanvas");
-var ctx = canvas.getContext("2d");
-var game = new Game(ctx);
+        <div class="right">
+            <p class="bio">Computer Science, AWICS, Dance Arts Society.
+                Excited to learn anything and everything about development.
+                Thanks for visiting my website!</p>
 
-document.addEventListener('click', onClickHandler, false);
-document.addEventListener('keydown', onKeyDownHandler, false);
-document.addEventListener('keyup', onKeyUpHandler, false);
-
-function onClickHandler(evt) {
-	if (game.gameOver) {
-		var midWidth = canvas.width/2;
-		var midHeight = canvas.height/2;
-		var buttonWidth = canvas.width*2/5;
-		var buttonHeight = canvas.width/8;
-
-		if (evt.layerX > midWidth - buttonWidth/2 && evt.layerX < midWidth + buttonWidth/2 && 
-		evt.layerY > 5 * midHeight / 4 - buttonHeight*2/3 && evt.layerY <5 * midHeight / 4 + buttonHeight/3) {
-			restartGame();
-		}
-	}
-}
-
-function onKeyDownHandler(evt) {
-	if (game.gameOver) {
-		if ((game.Player.rightPressed || game.Player.leftPressed) && game.keyUp) {
-			game.keyUp = false;
-		}
-		if (game.keyUp && 
-			(evt.key == "Right" || evt.key == "ArrowRight" || 
-			evt.key == "Left" || evt.key == "ArrowLeft" ||
-			evt.key == " " || evt.key == "Space")) {
-				restartGame();
-		}
-	}
-}
-
-function onKeyUpHandler(evt) {
-	if (game.gameOver) {
-	    game.keyUp = true;
-	}
-}
-
-function restartGame() {
-	game.restart();
-}
-
-const Consts = {
-	meteorRadius : 10,
-	meteorSpeed : 2, //default fall speed for meteors per frame */
-	buttonWidth : canvas.width*2/5,
-	buttonHeight : canvas.width/8,
-	gameOverWidth : canvas.width*3/4,
-	gameOverHeight : canvas.height/4,
-};
-
-//animation
-
-</script>
-
+            <u1 class="social-links">
+                <li><a href = https://www.linkedin.com/in/rebecca-m-601936135/>LinkedIn</li>
+                <li><a href = https://developer.cisco.com/user/profile/59e9a92c-36c8-11e9-88a4-b2c69d23b883>DevNet</li>
+            </u1>
+        </div>
+    </div>
+</body>
+</html>
