@@ -1,5 +1,5 @@
 StarImg = new Image();
-StarImg.src = 'images/star.png'
+StarImg.src = 'images/Star.png'
 stars = new Array()
 
 function Star(canvasCtx, space, type, prevX){
