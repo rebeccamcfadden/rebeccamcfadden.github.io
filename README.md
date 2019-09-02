@@ -1,3 +1,3 @@
-# Offline game for Edge Chromium Browser
-### 2019 Microsoft Hackathon Project
-Don't fall off the "edge" ;)
+# A personal website
+
+Visit [my site](https://rem20806.github.io) to check it out!
