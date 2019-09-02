@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body style ="background-color: #f6f6f6; font-family: sans-serif; font-size: 75%">
+<canvas id="gameCanvas" width="540" height="280" ></canvas>
 <div class = "block">
 	<div class="container">
 			<h1>Hi! My name is Rebecca McFadden.</h1>
@@ -25,7 +26,13 @@
 			
 	</div>	
 </div>
-<canvas id="gameCanvas" width="540" height="280" ></canvas>
+<script src="player.js"></script>
+<script src="meteor.js"></script>
+<script src="star.js"></script>
+<script src="space.js"></script>
+<script src="platform.js"></script>
+<script src="game.js"></script>
+<script src="score.js"></script>
 <script>
 
 var canvas = document.getElementById("gameCanvas");
@@ -55,7 +62,10 @@ function onKeyDownHandler(evt) {
 		if ((game.Player.rightPressed || game.Player.leftPressed) && game.keyUp) {
 			game.keyUp = false;
 		}
-		if (game.keyUp && (evt.key == " " || evt.key == "Space")) {
+		if (game.keyUp && 
+			(evt.key == "Right" || evt.key == "ArrowRight" || 
+			evt.key == "Left" || evt.key == "ArrowLeft" ||
+			evt.key == " " || evt.key == "Space")) {
 				restartGame();
 		}
 	}
@@ -71,3 +81,4 @@ function restartGame() {
 	game.restart();
 }
 </script>
+
