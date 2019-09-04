@@ -10,7 +10,40 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body style ="background-color: #f6f6f6; font-family: sans-serif; font-size: 75%">
-<div class = "block">
+<canvas id="canvas" width="540" height="280" ></canvas>
+<script>
+	var ctx = document.getElementById('canvas').getContext('2d');
+	var frame = 0;
+	var egg = new Image();
+	document.addEventListener("click", this.clickHandler.bind(egg), false);
+	window.onload = function(){
+		draw((canvas.width/2)-(egg.width/2)-5, (canvas.height/2)-56);
+		ctx.font = '20px serif';
+		ctx.fillText('click me!', (canvas.width/2) -40, (canvas.height/2)+50);
+	}
+	function text(){
+		var txt = document.getElementById("noshow")
+		txt.style.display = "inline";
+	}
+	function draw(x, y){
+		ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+		egg.onload = function() {
+			ctx.drawImage(egg, 44*frame, 0, 44, 56, (canvas.width/2)-40, (ctx.canvas.height/2)-56, 66, 84);
+		};
+		egg.src = "files/egg.png";
+	}
+	function clickHandler(e) {
+		frame++;
+		if(frame < 8){
+			draw((ctx.canvas.width/2)-(egg.width/2)-5, (ctx.canvas.height/2)-56);
+		}
+		else{
+			ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+			text();
+		}
+	}
+</script>
+<div id = "noshow" class = "block" style="display: none;">
 	<div class="container">
 			<h1>Hi! My name is Rebecca McFadden.</h1>
 			<br>
@@ -25,49 +58,3 @@
 			
 	</div>	
 </div>
-<canvas id="gameCanvas" width="540" height="280" ></canvas>
-<script>
-
-var canvas = document.getElementById("gameCanvas");
-var ctx = canvas.getContext("2d");
-var game = new Game(ctx);
-
-document.addEventListener('click', onClickHandler, false);
-document.addEventListener('keydown', onKeyDownHandler, false);
-document.addEventListener('keyup', onKeyUpHandler, false);
-
-function onClickHandler(evt) {
-	if (game.gameOver) {
-		var midWidth = canvas.width/2;
-		var midHeight = canvas.height/2;
-		var buttonWidth = canvas.width*2/5;
-		var buttonHeight = canvas.width/8;
-
-		if (evt.offsetX > midWidth - buttonWidth/2 && evt.offsetX < midWidth + buttonWidth/2 && 
-		evt.offsetY > 5 * midHeight / 4 - buttonHeight*2/3 && evt.offsetY <5 * midHeight / 4 + buttonHeight/3) {
-			restartGame();
-		}
-	}
-}
-
-function onKeyDownHandler(evt) {
-	if (game.gameOver) {
-		if ((game.Player.rightPressed || game.Player.leftPressed) && game.keyUp) {
-			game.keyUp = false;
-		}
-		if (game.keyUp && (evt.key == " " || evt.key == "Space")) {
-				restartGame();
-		}
-	}
-}
-
-function onKeyUpHandler(evt) {
-	if (game.gameOver) {
-	    game.keyUp = true;
-	}
-}
-
-function restartGame() {
-	game.restart();
-}
-</script>
