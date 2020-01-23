@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Rebecca McFadden</title>
+    <style>
+    	* { padding: 0; margin: 0; border:"1px solid #000000"}
+    	canvas { background: #f6f6f6; display: block; margin: 0 auto; border: "5px solid gray";}
+	</style>	
+	<link rel="stylesheet" href="style.css">
+</head>
+<body style ="background-color: #f6f6f6; font-family: sans-serif; font-size: 75%">
+<canvas id="canvas" width="540" height="280" ></canvas>
+<script>
+	var ctx = document.getElementById('canvas').getContext('2d');
+	var frame = 0;
+	var egg = new Image();
+	document.addEventListener("click", this.clickHandler.bind(egg), false);
+	window.onload = function(){
+		draw((canvas.width/2)-(egg.width/2)-5, (canvas.height/2)-56);
+		ctx.font = '20px serif';
+		ctx.fillText('click me!', (canvas.width/2) -40, (canvas.height/2)+50);
+	}
+	function text(){
+		var txt = document.getElementById("noshow")
+		txt.style.display = "inline";
+	}
+	function draw(x, y){
+		ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+		egg.onload = function() {
+			ctx.drawImage(egg, 44*frame, 0, 44, 56, (canvas.width/2)-40, (ctx.canvas.height/2)-56, 66, 84);
+		};
+		egg.src = "files/egg.png";
+	}
+	function clickHandler(e) {
+		frame++;
+		if(frame < 8){
+			draw((ctx.canvas.width/2)-(egg.width/2)-5, (ctx.canvas.height/2)-56);
+		}
+		else{
+			ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+			text();
+		}
+	}
+</script>
+<div id = "noshow" class = "block" style="display: none;">
+	<div class="container">
+			<h1>Hi! My name is Rebecca McFadden.</h1>
+			<br>
+            <p>I am a sophomore computer science honors student at Texas A&M University.</p>
+			<br>
+			<h3>To learn more about me, you can:</h3>
+			<ul>
+				<li><a href="https://www.github.com/rebeccamcfadden">Visit my github</li>
+				<li><a href="files/resume.pdf">View my resume.</a></li>
+				<li>Or contact me! (rmcfadden@tamu.edu)</a></li>
+			</ul>
+			
+	</div>	
+</div>

@@ -1,0 +1,195 @@
+body {
+  overflow-y: scroll;
+  font-family: 'Montserrat', sans-serif;
+}
+html {
+  font-family: 'Montserrat', sans-serif;
+}
+.navbar {
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgba(0, 102, 128, .6);
+    -webkit-box-shadow: 0 8px 6px -6px rgba(81, 82, 85, 0.7);;
+    -moz-box-shadow: 0 8px 6px -6px rgba(81, 82, 85, 0.7);;
+    box-shadow: 0 8px 6px -6px rgba(81, 82, 85, 0.7);
+}
+.nav-link , .navbar-brand {
+    color: white;
+}
+.nav-link {
+    margin-right: 1em !important;
+}
+.nav-link:hover {
+    color: rgb(253, 194, 205);
+}
+.navbar-brand:hover {
+    color: rgb(253, 194, 205);
+}
+.navbar-collapse{ 
+    justify-content: flex-end;
+}
+.header {
+    background-image: url("../images/beach.jpg");
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center;
+    position: sticky;
+    top: 0;
+}
+.overlay {
+    background-color: rgba(255, 255, 255, .5);
+    position: absolute;
+    min-height: 100%;
+    min-width: 100%;
+    left: 0;
+    top: 0;
+}
+.description{
+    position: absolute;
+    top: 25%;
+    margin: auto;
+    padding: 2em;
+    font-family: 'Montserrat', sans-serif;
+}
+.description h1{
+    font-size: 60px;
+    color: black;
+    font-weight: 250;
+}
+.description h6{
+ color: rgb(0, 71, 88);
+ font-size: 30px;
+ font-weight: 100;
+ width: 60%;
+ line-height: 1.5;
+}
+.bottompanel {
+  top: 95%;
+  position: relative;
+  background-color: rgb(228, 228, 228);
+  margin: 4em 0;
+  padding: 2em;
+  margin-bottom: 0;
+}
+.backdrop {
+  background-color: white;
+  position: relative;
+  margin: 5%;
+  padding: 2%;
+  padding-top: 3%;
+  -webkit-box-shadow: 0 12px 8px -8px rgba(81, 82, 85, 0.7);;
+  -moz-box-shadow: 0 12px 8px -8px rgba(81, 82, 85, 0.7);;
+  box-shadow: 0 12px 8px -8px rgba(81, 82, 85, 0.7);
+}
+.about p{
+  font-size: 14pt;
+}
+.about h3 {
+  font-size: 32px;
+}
+.arrow-nav {
+  position: fixed;
+  left: 50%;
+  top: 90%;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  color: white;
+}
+.arrow-nav:hover {
+  color: teal;
+}
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem; 
+  background-color: rgb(0, 102, 128);
+}
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  text-align: right;
+  text-decoration: none;
+  border-radius: 10%;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Facebook */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+/* Linkedin */
+.fa-linkedin {
+  background: #007BB5;
+  color: white;
+}
+
+.fa-github {
+  background: rgb(39, 39, 39);
+  color: white;
+}
+
+.fa-envelope-o {
+  background: #BB0000;
+  color: white;
+  font-size: 40px;
+}
+.fa:hover, .fa:active { 
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+    }
+
+@media only screen and (max-width: 800px){
+  h1 {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  h5 {
+    font-size: 12px;
+    font-size: smaller;
+  }
+  .description h6 {
+    font-size: 18px !important;
+  }
+  .description h1 {
+    font-size: 36px;
+  }
+  p {
+    font-size: 12px;
+  }
+  .about p {
+    font-size: 14px;;
+  }
+  ul, li {
+    font-size: 12px;
+  }
+  .description{
+    top: 15%;
+  }
+  .nav-link{
+    font-size: 14px;
+  }
+}
